@@ -1,4 +1,4 @@
-export interface PieChartProps {
+export interface PieChartsProps {
   title: string
   value: number
   series: Array<number>
