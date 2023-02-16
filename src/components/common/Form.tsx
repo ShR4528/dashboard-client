@@ -36,8 +36,7 @@ const Form = ({
             flexDirection: 'column',
             gap: '20px',
           }}
-          onSubmit={handleSubmit(onFinishHandler)}
-        >
+          onSubmit={handleSubmit(onFinishHandler)}>
           <FormControl>
             <FormHelperText
               sx={{
@@ -45,8 +44,7 @@ const Form = ({
                 margin: '10px 0',
                 fontSize: 16,
                 color: '#11142d',
-              }}
-            >
+              }}>
               Enter property name
             </FormHelperText>
             <TextField
@@ -67,8 +65,7 @@ const Form = ({
                 margin: '10px',
                 fontSize: 16,
                 color: '#11142d',
-              }}
-            >
+              }}>
               Enter Description
             </FormHelperText>
             <TextareaAutosize
@@ -88,6 +85,7 @@ const Form = ({
               {...register('description', { required: true })}
             />
           </FormControl>
+
           <Stack direction='row' gap={4}>
             <FormControl sx={{ flex: 1 }}>
               <FormHelperText
@@ -96,8 +94,7 @@ const Form = ({
                   margin: '10px 0',
                   fontSize: 16,
                   color: '#11142d',
-                }}
-              >
+                }}>
                 Select Property Type
               </FormHelperText>
               <Select
@@ -109,8 +106,7 @@ const Form = ({
                 defaultValue='apartment'
                 {...register('propertyType', {
                   required: true,
-                })}
-              >
+                })}>
                 <MenuItem value='apartment'>Apartment</MenuItem>
                 <MenuItem value='villa'>Villa</MenuItem>
                 <MenuItem value='farmhouse'>farmhouse</MenuItem>
@@ -128,8 +124,7 @@ const Form = ({
                   margin: '10px 0',
                   fontSize: 16,
                   color: '#11142d',
-                }}
-              >
+                }}>
                 Enter property price
               </FormHelperText>
               <TextField
@@ -143,6 +138,7 @@ const Form = ({
               />
             </FormControl>
           </Stack>
+
           <FormControl>
             <FormHelperText
               sx={{
@@ -150,8 +146,7 @@ const Form = ({
                 margin: '10px 0',
                 fontSize: 16,
                 color: '#11142d',
-              }}
-            >
+              }}>
               Enter Location
             </FormHelperText>
             <TextField
@@ -169,8 +164,7 @@ const Form = ({
                 color='#11142d'
                 fontSize={16}
                 fontWeight={500}
-                my='10px'
-              >
+                my='10px'>
                 Property Photo
               </Typography>
 
@@ -181,8 +175,7 @@ const Form = ({
                   color: '#2ed480',
                   textTransform: 'capitalize',
                   fontSize: 16,
-                }}
-              >
+                }}>
                 Upload *
                 <input
                   hidden
@@ -197,8 +190,7 @@ const Form = ({
             <Typography
               fontSize={14}
               color='#808191'
-              sx={{ wordBreak: 'break-all' }}
-            >
+              sx={{ wordBreak: 'break-all' }}>
               {propertyImage?.name}
             </Typography>
           </Stack>

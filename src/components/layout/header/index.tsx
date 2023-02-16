@@ -31,20 +31,17 @@ export const Header: React.FC = () => {
       color='default'
       position='sticky'
       elevation={0}
-      sx={{ background: '#fcfcfc' }}
-    >
+      sx={{ background: '#fcfcfc' }}>
       <Toolbar>
         <Stack
           direction='row'
           width='100%'
           justifyContent='flex-end'
-          alignItems='center'
-        >
+          alignItems='center'>
           <IconButton
             onClick={() => {
               setMode()
-            }}
-          >
+            }}>
             {mode === 'dark' ? <LightModeOutlined /> : <DarkModeOutlined />}
           </IconButton>
           <FormControl sx={{ m: 1, minWidth: 120 }}>
@@ -52,8 +49,7 @@ export const Header: React.FC = () => {
               disableUnderline
               defaultValue={currentLocale}
               inputProps={{ 'aria-label': 'Without label' }}
-              variant='standard'
-            >
+              variant='standard'>
               {[...(i18n.languages ?? [])].sort().map((lang: string) => (
                 <MenuItem
                   selected={currentLocale === lang}
@@ -62,13 +58,11 @@ export const Header: React.FC = () => {
                   onClick={() => {
                     changeLanguage(lang)
                   }}
-                  value={lang}
-                >
+                  value={lang}>
                   <Stack
                     direction='row'
                     alignItems='center'
-                    justifyContent='center'
-                  >
+                    justifyContent='center'>
                     <Avatar
                       sx={{
                         width: '16px',
