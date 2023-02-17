@@ -1,6 +1,6 @@
-import { Button } from '@pankod/refine-mui'
+import { Button } from '@pankod/refine-mui';
 
-import { CustomButtonProps } from 'interfaces/common'
+import { CustomButtonProps } from 'interfaces/common';
 
 const CustomButton = ({
   type,
@@ -10,9 +10,11 @@ const CustomButton = ({
   fullWidth,
   icon,
   handleClick,
+  disabled,
 }: CustomButtonProps) => {
   return (
     <Button
+      disabled={disabled}
       type={type === 'submit' ? 'submit' : 'button'}
       sx={{
         flex: fullWidth ? 1 : 'unset',
@@ -34,7 +36,7 @@ const CustomButton = ({
       {icon}
       {title}
     </Button>
-  )
-}
+  );
+};
 
-export default CustomButton
+export default CustomButton;
