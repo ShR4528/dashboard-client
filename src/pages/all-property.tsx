@@ -42,7 +42,7 @@ const AllProperties = () => {
     return {
       title: logicalFilters.find((item) => item.field === 'title')?.value || '',
       propertyType:
-        logicalFilters.find((item) => item.field === ' propertyType')?.value ||
+        logicalFilters.find((item) => item.field === 'propertyType')?.value ||
         '',
     };
   }, [filters]);

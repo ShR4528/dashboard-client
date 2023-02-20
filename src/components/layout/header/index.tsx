@@ -1,5 +1,9 @@
-import React, { useContext } from 'react'
-import { useGetIdentity, useGetLocale, useSetLocale } from '@pankod/refine-core'
+import React, { useContext } from 'react';
+import {
+  useGetIdentity,
+  useGetLocale,
+  useSetLocale,
+} from '@pankod/refine-core';
 import {
   AppBar,
   IconButton,
@@ -10,21 +14,21 @@ import {
   Select,
   Toolbar,
   Typography,
-} from '@pankod/refine-mui'
-import { DarkModeOutlined, LightModeOutlined } from '@mui/icons-material'
+} from '@pankod/refine-mui';
+import { DarkModeOutlined, LightModeOutlined } from '@mui/icons-material';
 
-import { ColorModeContext } from 'contexts'
-import i18n from 'i18n'
+import { ColorModeContext } from 'contexts';
+import i18n from 'i18n';
 
 export const Header: React.FC = () => {
-  const { mode, setMode } = useContext(ColorModeContext)
+  const { mode, setMode } = useContext(ColorModeContext);
 
-  const changeLanguage = useSetLocale()
-  const locale = useGetLocale()
-  const currentLocale = locale()
+  const changeLanguage = useSetLocale();
+  const locale = useGetLocale();
+  const currentLocale = locale();
 
-  const { data: user } = useGetIdentity()
-  const showUserInfo = user && (user.name || user.avatar)
+  const { data: user } = useGetIdentity();
+  const showUserInfo = user && (user.name || user.avatar);
 
   return (
     <AppBar
@@ -40,7 +44,7 @@ export const Header: React.FC = () => {
           alignItems='center'>
           <IconButton
             onClick={() => {
-              setMode()
+              setMode();
             }}>
             {mode === 'dark' ? <LightModeOutlined /> : <DarkModeOutlined />}
           </IconButton>
@@ -56,7 +60,7 @@ export const Header: React.FC = () => {
                   key={lang}
                   defaultValue={lang}
                   onClick={() => {
-                    changeLanguage(lang)
+                    changeLanguage(lang);
                   }}
                   value={lang}>
                   <Stack
@@ -88,5 +92,5 @@ export const Header: React.FC = () => {
         </Stack>
       </Toolbar>
     </AppBar>
-  )
-}
+  );
+};
